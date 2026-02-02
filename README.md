@@ -356,6 +356,12 @@ Works in all modern browsers (Chrome, Firefox, Safari, Edge).
 
 ---
 
+## Disclaimer
+
+AI was used for the texts.
+
+---
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
