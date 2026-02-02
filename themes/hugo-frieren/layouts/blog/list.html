@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="page-header page-header-with-bg" style="background-image: url('{{ `images/frieren-upperbody-staff.png` | relURL }}');">
+  <h1>{{ .Title }}</h1>
+  <p>{{ i18n "blogSubtitle" | default "Gedanken, Tutorials und mehr" }}</p>
+</div>
+
+<div class="container">
+  <div class="blog-grid">
+    {{ range .Pages }}
+    <article class="card">
+      <div class="card-image-placeholder">&#9733;</div>
+      <div class="card-body">
+        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="card-text">{{ .Summary | truncate 150 }}</p>
+        <div class="card-meta">
+          <time>{{ .Date.Format "02.01.2006" }}</time>
+          {{ with .Params.tags }}
+          <div class="card-tags">
+            {{ range first 3 . }}
+            <span class="tag">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

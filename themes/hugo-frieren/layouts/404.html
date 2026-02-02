@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container-narrow section text-center">
+  <div class="frieren-404">
+    <img src="{{ `images/frieren-closeup.png` | relURL }}" alt="Frieren">
+  </div>
+  <h1 style="font-size: 4rem; color: #8B6BAE; margin-top: 1rem;">404</h1>
+  <p style="font-size: 1.3rem; color: #6B5E7A; margin-bottom: 2rem;">
+    {{ i18n "notFound" | default "Diese Seite scheint in einer anderen Dimension zu sein..." }}
+  </p>
+  <a href="{{ site.Home.RelPermalink }}" class="btn btn-primary">
+    {{ i18n "backHome" | default "Zurück zur Startseite" }}
+  </a>
+</div>
+{{ end }}

@@ -1,0 +1,21 @@
+# Hugo build output
+public/
+resources/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Hugo lock
+.hugo_build.lock
+
+# Large non-web image formats
+*.tiff
+*.tif
+*.psd

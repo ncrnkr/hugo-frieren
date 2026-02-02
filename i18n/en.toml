@@ -1,0 +1,89 @@
+[navigation]
+other = "Navigation"
+
+[connect]
+other = "Connect"
+
+[allRightsReserved]
+other = "All rights reserved."
+
+[builtWith]
+other = "Built with"
+
+[inspiredBy]
+other = "inspired by"
+
+[readMore]
+other = "Read more"
+
+[viewAll]
+other = "View all"
+
+[viewProject]
+other = "View project"
+
+[sendMessage]
+other = "Send message"
+
+[name]
+other = "Name"
+
+[email]
+other = "Email"
+
+[subject]
+other = "Subject"
+
+[message]
+other = "Message"
+
+[latestPosts]
+other = "Latest Posts"
+
+[featuredProjects]
+other = "Featured Projects"
+
+[galleryPreview]
+other = "Gallery"
+
+[postedOn]
+other = "Posted on"
+
+[tagged]
+other = "Tags"
+
+[backToBlog]
+other = "Back to blog"
+
+[contactSubtitle]
+other = "I'd love to hear from you"
+
+[aboutSubtitle]
+other = "Learn more about me"
+
+[portfolioSubtitle]
+other = "My projects and work"
+
+[blogSubtitle]
+other = "Thoughts, tutorials and more"
+
+[gallerySubtitle]
+other = "Images and impressions"
+
+[readBlog]
+other = "Read blog"
+
+[contactMe]
+other = "Contact"
+
+[quoteMemories]
+other = "The memories we share are the true gold of a journey."
+
+[quoteMemoriesCite]
+other = "Frieren: Beyond Journey's End"
+
+[quoteSpells]
+other = "These spells are not useless. They made someone smile."
+
+[quoteSpellsCite]
+other = "Frieren"

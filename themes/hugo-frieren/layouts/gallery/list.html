@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  <p>{{ i18n "gallerySubtitle" | default "Bilder und Eindrücke" }}</p>
+  <div class="page-header-decoration">
+    <img src="{{ `images/frieren-peeking-scarf.png` | relURL }}" alt="Frieren" style="height: 160px; object-fit: contain;">
+  </div>
+</div>
+
+<div class="container">
+  <div class="gallery-grid">
+    {{ range .Pages }}
+    <div class="gallery-item">
+      {{ with .Params.image }}
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
+      {{ else }}
+      <div class="gallery-placeholder">&#9827;</div>
+      {{ end }}
+      <div class="gallery-item-overlay">
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="">
+</div>
+{{ end }}

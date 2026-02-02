@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  <p>{{ i18n "aboutSubtitle" | default "Erfahre mehr über mich" }}</p>
+</div>
+
+<div class="container">
+  <div class="about-layout">
+    <div class="about-sidebar">
+      <div class="about-avatar">
+        {{ if .Params.avatar }}
+          <img src="{{ .Params.avatar | relURL }}" alt="{{ site.Params.author }}">
+        {{ else }}
+          <img src="{{ `images/frieren-portrait.png` | relURL }}" alt="Frieren">
+        {{ end }}
+      </div>
+
+      <h3 class="text-center">{{ with site.Params.author }}{{ . }}{{ else }}Dein Name{{ end }}</h3>
+      {{ with .Params.role }}
+      <p class="text-center" style="color: #8B6BAE; font-size: 0.95rem;">{{ . }}</p>
+      {{ end }}
+
+      {{ with .Params.social }}
+      <div class="about-social">
+        {{ range . }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}">{{ .icon | safeHTML }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="about-content">
+      {{ .Content }}
+
+      {{ with .Params.skills }}
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        {{ range . }}
+        <div class="skill-item">
+          <div class="skill-icon">{{ .icon | default "&#9733;" | safeHTML }}</div>
+          <div class="skill-name">{{ .name }}</div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

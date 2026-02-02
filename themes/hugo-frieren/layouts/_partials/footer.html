@@ -1,0 +1,39 @@
+<div class="footer-inner">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="{{ site.Home.RelPermalink }}" class="site-logo">
+        <span class="logo-icon">F</span>
+        {{ site.Title }}
+      </a>
+      <p>{{ with site.Params.description }}{{ . }}{{ end }}</p>
+      <div class="footer-chibi">
+        <img src="{{ `images/frieren-peeking-scarf.png` | relURL }}" alt="Frieren">
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>{{ i18n "navigation" | default "Navigation" }}</h4>
+      <ul>
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>{{ i18n "connect" | default "Connect" }}</h4>
+      <ul>
+        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ now.Year }} {{ site.Title }}. {{ i18n "allRightsReserved" | default "All rights reserved." }}
+      {{ i18n "builtWith" | default "Built with" }} <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>
+      &amp; {{ i18n "inspiredBy" | default "inspired by" }} Frieren.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="header-inner">
+  <a href="{{ site.Home.RelPermalink }}" class="site-logo">
+    <span class="logo-icon">F</span>
+    {{ site.Title }}
+  </a>
+
+  <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="main-nav" role="navigation">
+    {{ with site.Menus.main }}
+    <ul>
+      {{ range . }}
+      <li>
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} class="active" aria-current="page"{{ end }}>
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+    <div class="lang-switcher">
+      {{- if hugo.IsMultilingual }}
+        {{- $currentLang := site.Language.Lang }}
+        {{- range site.Languages }}
+          {{- if eq .Lang $currentLang }}
+            <a href="{{ $.RelPermalink }}" class="active">{{ .Lang | upper }}</a>
+          {{- else }}
+            {{- $found := false }}
+            {{- $href := "" }}
+            {{- range $.Translations }}
+              {{- if eq .Lang $.Language.Lang }}
+              {{- else }}
+                {{- $found = true }}
+                {{- $href = .RelPermalink }}
+              {{- end }}
+            {{- end }}
+            {{- if $found }}
+              <a href="{{ $href }}">{{ .Lang | upper }}</a>
+            {{- else }}
+              <a href="/{{ .Lang }}/">{{ .Lang | upper }}</a>
+            {{- end }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+    </div>
+  </nav>
+</div>

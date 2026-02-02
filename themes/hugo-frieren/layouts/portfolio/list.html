@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  <p>{{ i18n "portfolioSubtitle" | default "Meine Projekte und Arbeiten" }}</p>
+  <div class="page-header-decoration">
+    <img src="{{ `images/frieren-halfbody-smile.png` | relURL }}" alt="Frieren" style="height: 180px; object-fit: contain;">
+  </div>
+</div>
+
+<div class="container">
+  <div class="portfolio-grid">
+    {{ range .Pages }}
+    <article class="card portfolio-card">
+      <div class="card-image-placeholder">&#9830;</div>
+      <div class="card-body">
+        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="card-text">{{ .Summary | truncate 150 }}</p>
+        {{ with .Params.tech }}
+        <div class="portfolio-tech">
+          {{ range . }}
+          <span class="tech-badge">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <div class="card-meta">
+          {{ with .Params.projectUrl }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-accent" style="padding: 6px 16px; font-size: 0.8rem;">{{ i18n "viewProject" | default "Projekt ansehen" }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

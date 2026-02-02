@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container-narrow section">
+  <div class="post-header text-center mb-4">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tech }}
+    <div class="portfolio-tech" style="justify-content: center;">
+      {{ range . }}
+      <span class="tech-badge">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.projectUrl }}
+  <div class="text-center mt-4 mb-4">
+    <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary">{{ i18n "viewProject" | default "Projekt ansehen" }} &rarr;</a>
+  </div>
+  {{ end }}
+
+  <div class="text-center mt-4">
+    <a href="{{ `portfolio` | relLangURL }}" class="btn btn-secondary">&larr; {{ i18n "backToPortfolio" | default "Zurück zum Portfolio" }}</a>
+  </div>
+</div>
+{{ end }}

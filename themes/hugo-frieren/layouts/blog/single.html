@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="blog-post-single">
+  <div class="post-header">
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">
+      <time>{{ i18n "postedOn" | default "Veröffentlicht am" }} {{ .Date.Format "02. January 2006" }}</time>
+      {{ with .Params.author }}
+      <span>{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ with .Params.tags }}
+    <div class="card-tags mt-2" style="justify-content: center;">
+      {{ range . }}
+      <a href="{{ `tags` | relLangURL }}/{{ . | urlize }}/" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <div class="magic-divider">
+    <div class="frieren-staff-divider">
+      {{ $staff := resources.Get "images/frieren-staff.svg" }}
+      {{ with $staff }}{{ .Content | safeHTML }}{{ end }}
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="{{ `blog` | relLangURL }}" class="btn btn-secondary">&larr; {{ i18n "backToBlog" | default "Zurück zum Blog" }}</a>
+  </div>
+</article>
+{{ end }}

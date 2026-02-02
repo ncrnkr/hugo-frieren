@@ -1,0 +1,174 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="hero hero-anime">
+  <!-- Floating Sparkles -->
+  <span class="sparkle">&#10022;</span>
+  <span class="sparkle">&#10038;</span>
+  <span class="sparkle">&#9733;</span>
+  <span class="sparkle">&#10022;</span>
+  <span class="sparkle">&#10038;</span>
+  <span class="sparkle">&#9733;</span>
+  <span class="sparkle">&#10022;</span>
+  <span class="sparkle">&#10038;</span>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="anime-ribbon">&#10024; {{ i18n "葬送のフリーレン" | default "葬送のフリーレン" }} &#10024;</span>
+      <h1 class="hero-title">
+        {{ with site.Params.heroTitle }}{{ . }}{{ else }}Willkommen in meiner Welt{{ end }}
+      </h1>
+      <p class="hero-subtitle">
+        {{ with site.Params.heroSubtitle }}{{ . }}{{ else }}Eine Reise durch Code, Kreativit&auml;t und Magie{{ end }}
+      </p>
+      {{ with site.Params.frierenQuote }}
+      <blockquote class="hero-quote">{{ . }}</blockquote>
+      {{ end }}
+      <div class="hero-buttons">
+        <a href="{{ `portfolio` | relLangURL }}" class="btn btn-primary">{{ i18n "viewProject" | default "Projekte ansehen" }} &#10024;</a>
+        <a href="{{ `blog` | relLangURL }}" class="btn btn-secondary">{{ i18n "readBlog" | default "Blog lesen" }} &#9733;</a>
+        <a href="{{ `contact` | relLangURL }}" class="btn btn-accent">{{ i18n "contactMe" | default "Kontakt" }} &#9829;</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="{{ `images/frieren-fullbody-staff.png` | relURL }}" alt="Frieren">
+    </div>
+  </div>
+</section>
+
+<!-- Anime Quote Banner -->
+<section class="anime-quote-banner">
+  <div class="banner-inner">
+    <div class="banner-image">
+      <img src="{{ `images/frieren-halfbody-smile.png` | relURL }}" alt="Frieren">
+    </div>
+    <div class="banner-text">
+      <blockquote>&#x201E;{{ i18n "quoteMemories" }}&#x201C;</blockquote>
+      <cite>&#8212; {{ i18n "quoteMemoriesCite" }}</cite>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Blog Posts -->
+<section class="home-section-preview section section-anime-blog">
+  <div class="container">
+    <div class="preview-header-anime">
+      <div>
+        <h2>&#9733; {{ i18n "latestPosts" | default "Neueste Beitr&auml;ge" }}</h2>
+        <a href="{{ `blog` | relLangURL }}">{{ i18n "viewAll" | default "Alle anzeigen" }} &rarr;</a>
+      </div>
+      <img src="{{ `images/frieren-upperbody-staff.png` | relURL }}" alt="Frieren" class="header-character-deco">
+    </div>
+    <div class="blog-grid">
+      {{ range first 3 (where site.RegularPages "Section" "blog") }}
+      <article class="card card-anime-border">
+        <div class="card-image-placeholder">&#9733;</div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="card-text">{{ .Summary | truncate 120 }}</p>
+          <div class="card-meta">
+            <time>{{ .Date.Format "02.01.2006" }}</time>
+            {{ with .Params.tags }}
+            <div class="card-tags">
+              {{ range first 2 . }}
+              <span class="tag">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+  <!-- Peeking Frieren -->
+  <div class="section-peek section-peek-right">
+    <img src="{{ `images/frieren-peeking-scarf.png` | relURL }}" alt="Frieren">
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+
+<!-- Featured Portfolio -->
+<section class="home-section-preview section section-anime-portfolio bg-stars">
+  <div class="container">
+    <div class="preview-header-anime">
+      <div>
+        <h2>&#9830; {{ i18n "featuredProjects" | default "Ausgewählte Projekte" }}</h2>
+        <a href="{{ `portfolio` | relLangURL }}">{{ i18n "viewAll" | default "Alle anzeigen" }} &rarr;</a>
+      </div>
+    </div>
+    <div class="portfolio-grid">
+      {{ range first 3 (where site.RegularPages "Section" "portfolio") }}
+      <article class="card portfolio-card card-anime-border">
+        <div class="card-image-placeholder">&#9830;</div>
+        <div class="card-body">
+          <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="card-text">{{ .Summary | truncate 100 }}</p>
+          {{ with .Params.tech }}
+          <div class="portfolio-tech">
+            {{ range . }}
+            <span class="tech-badge">{{ . }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+  <!-- Floating character -->
+  <div class="section-float-character float-right-bottom">
+    <img src="{{ `images/frieren-bottle-smile.png` | relURL }}" alt="Frieren">
+  </div>
+</section>
+
+<!-- Star Divider -->
+<div class="star-divider">&#10022; &#9733; &#10038; &#9733; &#10022;</div>
+
+<!-- Anime Quote Banner 2 -->
+<section class="anime-quote-banner" style="background: linear-gradient(135deg, #E8A0B4 0%, #B8A8D8 40%, #87CEEB 70%, #7EC8B0 100%);">
+  <div class="banner-inner">
+    <div class="banner-text">
+      <blockquote>&#x201E;{{ i18n "quoteSpells" }}&#x201C;</blockquote>
+      <cite>&#8212; {{ i18n "quoteSpellsCite" }}</cite>
+    </div>
+    <div class="banner-image">
+      <img src="{{ `images/frieren-closeup.png` | relURL }}" alt="Frieren">
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Preview -->
+<section class="home-section-preview section section-anime-gallery">
+  <div class="container">
+    <div class="preview-header-anime">
+      <div>
+        <h2>&#10047; {{ i18n "galleryPreview" | default "Galerie" }}</h2>
+        <a href="{{ `gallery` | relLangURL }}">{{ i18n "viewAll" | default "Alle anzeigen" }} &rarr;</a>
+      </div>
+      <img src="{{ `images/frieren-portrait.png` | relURL }}" alt="Frieren" class="header-character-deco">
+    </div>
+    <div class="gallery-grid">
+      {{ range first 4 (where site.RegularPages "Section" "gallery") }}
+      <div class="gallery-item">
+        {{ with .Params.image }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+        {{ else }}
+        <div class="gallery-placeholder">&#9827;</div>
+        {{ end }}
+        <div class="gallery-item-overlay">
+          <h3>{{ .Title }}</h3>
+          {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <!-- Floating character -->
+  <div class="section-float-character float-left-top">
+    <img src="{{ `images/frieren-peeking-scarf.png` | relURL }}" alt="Frieren">
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+{{ end }}

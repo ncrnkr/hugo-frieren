@@ -1,0 +1,89 @@
+[navigation]
+other = "Navigation"
+
+[connect]
+other = "Verbinden"
+
+[allRightsReserved]
+other = "Alle Rechte vorbehalten."
+
+[builtWith]
+other = "Erstellt mit"
+
+[inspiredBy]
+other = "inspiriert von"
+
+[readMore]
+other = "Weiterlesen"
+
+[viewAll]
+other = "Alle anzeigen"
+
+[viewProject]
+other = "Projekt ansehen"
+
+[sendMessage]
+other = "Nachricht senden"
+
+[name]
+other = "Name"
+
+[email]
+other = "E-Mail"
+
+[subject]
+other = "Betreff"
+
+[message]
+other = "Nachricht"
+
+[latestPosts]
+other = "Neueste Beiträge"
+
+[featuredProjects]
+other = "Ausgewählte Projekte"
+
+[galleryPreview]
+other = "Galerie"
+
+[postedOn]
+other = "Veröffentlicht am"
+
+[tagged]
+other = "Tags"
+
+[backToBlog]
+other = "Zurück zum Blog"
+
+[contactSubtitle]
+other = "Ich freue mich auf deine Nachricht"
+
+[aboutSubtitle]
+other = "Erfahre mehr über mich"
+
+[portfolioSubtitle]
+other = "Meine Projekte und Arbeiten"
+
+[blogSubtitle]
+other = "Gedanken, Tutorials und mehr"
+
+[gallerySubtitle]
+other = "Bilder und Eindrücke"
+
+[readBlog]
+other = "Blog lesen"
+
+[contactMe]
+other = "Kontakt"
+
+[quoteMemories]
+other = "Die Erinnerungen, die wir teilen, sind das wahre Gold einer Reise."
+
+[quoteMemoriesCite]
+other = "Frieren: Nach dem Ende der Reise"
+
+[quoteSpells]
+other = "Diese Zauber sind nicht nutzlos. Sie haben jemanden zum Lächeln gebracht."
+
+[quoteSpellsCite]
+other = "Frieren"

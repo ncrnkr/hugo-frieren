@@ -1,0 +1,97 @@
+baseURL = 'https://example.org/'
+title = 'Frieren'
+theme = 'hugo-frieren'
+
+defaultContentLanguage = 'de'
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.de]
+    languageCode = 'de-DE'
+    languageName = 'Deutsch'
+    weight = 1
+    [languages.de.params]
+      description = 'Eine Hommage an Frieren: Nach dem Ende der Reise'
+    [languages.de.menus]
+      [[languages.de.menus.main]]
+        name = 'Startseite'
+        pageRef = '/'
+        weight = 10
+      [[languages.de.menus.main]]
+        name = 'Über mich'
+        pageRef = '/about'
+        weight = 20
+      [[languages.de.menus.main]]
+        name = 'Portfolio'
+        pageRef = '/portfolio'
+        weight = 30
+      [[languages.de.menus.main]]
+        name = 'Blog'
+        pageRef = '/blog'
+        weight = 40
+      [[languages.de.menus.main]]
+        name = 'Galerie'
+        pageRef = '/gallery'
+        weight = 50
+      [[languages.de.menus.main]]
+        name = 'Kontakt'
+        pageRef = '/contact'
+        weight = 60
+
+  [languages.en]
+    languageCode = 'en-US'
+    languageName = 'English'
+    weight = 2
+    [languages.en.params]
+      description = "A tribute to Frieren: Beyond Journey's End"
+      heroTitle = "Frieren: Beyond Journey's End"
+      heroSubtitle = "An elven mage searching for the meaning of the memories she shared with her companions."
+      frierenQuote = '"I have lived a thousand years and yet understood so little. Perhaps I am only now beginning to truly see things."'
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        name = 'Home'
+        pageRef = '/'
+        weight = 10
+      [[languages.en.menus.main]]
+        name = 'About'
+        pageRef = '/about'
+        weight = 20
+      [[languages.en.menus.main]]
+        name = 'Portfolio'
+        pageRef = '/portfolio'
+        weight = 30
+      [[languages.en.menus.main]]
+        name = 'Blog'
+        pageRef = '/blog'
+        weight = 40
+      [[languages.en.menus.main]]
+        name = 'Gallery'
+        pageRef = '/gallery'
+        weight = 50
+      [[languages.en.menus.main]]
+        name = 'Contact'
+        pageRef = '/contact'
+        weight = 60
+
+[params]
+  author = 'Frieren'
+  heroTitle = 'Frieren: Nach dem Ende der Reise'
+  heroSubtitle = 'Eine Elfenmagierin auf der Suche nach der Bedeutung der Erinnerungen, die sie mit ihren Gefährten teilte.'
+  frierenQuote = '„Ich habe tausend Jahre gelebt und trotzdem so wenig verstanden. Vielleicht beginne ich erst jetzt, die Dinge wirklich zu sehen."'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[pagination]
+  pagerSize = 6
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.146.0'

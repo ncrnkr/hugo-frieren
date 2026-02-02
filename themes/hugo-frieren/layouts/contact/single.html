@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  <p>{{ i18n "contactSubtitle" | default "Ich freue mich auf deine Nachricht" }}</p>
+</div>
+
+<div class="container">
+  <div class="contact-layout">
+    <div class="contact-info">
+      {{ .Content }}
+
+      {{ with .Params.details }}
+      {{ range . }}
+      <div class="contact-detail">
+        <div class="contact-detail-icon">{{ .icon | safeHTML }}</div>
+        <div class="contact-detail-text">
+          <h4>{{ .label }}</h4>
+          <p>{{ .value }}</p>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+
+      <div class="contact-frieren-decoration">
+        <img src="{{ `images/frieren-bottle-smile.png` | relURL }}" alt="Frieren">
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form action="{{ with .Params.formAction }}{{ . }}{{ else }}#{{ end }}" method="POST">
+        <div class="form-group">
+          <label for="name">{{ i18n "name" | default "Name" }}</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">{{ i18n "email" | default "E-Mail" }}</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">{{ i18n "subject" | default "Betreff" }}</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">{{ i18n "message" | default "Nachricht" }}</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          {{ i18n "sendMessage" | default "Nachricht senden" }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{{ end }}
